@@ -2,18 +2,26 @@
 // 1
 function uppercase(str) {
   //write your code here
-  let sentence = [];
-  const firstLetter = str[0].toUpperCase();
-  for (let i = 1; i < str.length; i++) {
-    sentence.push(str[i]);
+  let splittedArr = str.split(" ");
+  let newArr = [];
+
+  // console.log(splittedArr);
+
+  for (let i = 0; i < splittedArr.length; i++) {
+    newArr.push(
+      splittedArr[i].slice(0, 1).toUpperCase() +
+        splittedArr[i].slice(1, splittedArr[i].length)
+    );
   }
 
-  return firstLetter + sentence.join("");
+  return newArr.join(" ");
 }
 
 console.log(uppercase("the quick brown fox"));
 
 console.log(uppercase("i'm the king of the jungle"));
+
+console.log(uppercase("sjfg jsdfjh jsdfjg"));
 
 // 2
 // Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
@@ -35,7 +43,11 @@ function find_longest_word(str) {
 
   return longestWord;
 }
-console.log(find_longest_word("Web Development Tutorial"));
+console.log(
+  find_longest_word(
+    "jsgfjhghdgfhdgfhdgfhboob Web Development Tutorial jsdgfjdsg"
+  )
+);
 
 console.log(find_longest_word("Which word is the lonest word"));
 
@@ -67,6 +79,6 @@ console.log(
   Longest_Country_Name([
     "The united arab Emirates",
     "Eritrea",
-    "The longest country name i have ever heard",
+    "The longest country name i have ever",
   ])
 );
