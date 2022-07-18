@@ -1,24 +1,72 @@
 //Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.
 // 1
 function uppercase(str) {
-  //write your code here 
+  //write your code here
+  let sentence = [];
+  const firstLetter = str[0].toUpperCase();
+  for (let i = 1; i < str.length; i++) {
+    sentence.push(str[i]);
+  }
+
+  return firstLetter + sentence.join("");
 }
 
 console.log(uppercase("the quick brown fox"));
 
+console.log(uppercase("i'm the king of the jungle"));
+
 // 2
 // Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
 function find_longest_word(str) {
-  //write your code here 
+  //write your code here
+  const arrOfWords = str.split(" ");
+  let longestLetterCount = 0;
+  let longestWord;
+
+  for (let i = 0; i < arrOfWords.length; i++) {
+    if (arrOfWords[i].length > longestLetterCount) {
+      longestLetterCount = arrOfWords[i].length;
+
+      if (arrOfWords[i].length === longestLetterCount) {
+        longestWord = arrOfWords[i];
+      }
+    }
+  }
+
+  return longestWord;
 }
 console.log(find_longest_word("Web Development Tutorial"));
+
+console.log(find_longest_word("Which word is the lonest word"));
 
 // 3
 // Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
 function Longest_Country_Name(country_name) {
-  //write your code here 
+  //write your code here
+  let longestLetterCount = 0;
+  let longestWord;
+
+  for (let i = 0; i < country_name.length; i++) {
+    if (country_name[i].length > longestLetterCount) {
+      longestLetterCount = country_name[i].length;
+
+      if (country_name[i].length === longestLetterCount) {
+        longestWord = country_name[i];
+      }
+    }
+  }
+
+  return longestWord;
 }
 
 console.log(
   Longest_Country_Name(["Australia", "Germany", "United States of America"])
+);
+
+console.log(
+  Longest_Country_Name([
+    "The united arab Emirates",
+    "Eritrea",
+    "The longest country name i have ever heard",
+  ])
 );
